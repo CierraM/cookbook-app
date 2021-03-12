@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Kuchen? Admin Portal</title>
+    <script src="./assets/airtable.js"></script>
+</head>
+<body>
+    <header>
+        <a href="./index.html"><img src="assets/home.svg" alt="home icon" width="30"></a>
+        <div><img src="assets/magnifying-glass.svg" alt="search icon" width="20"><input type="text" placeholder="search"></div>
+    </header>
+    <main>
+    <h2>Admin Portal</h2>
+    <!-- Login form -->
+    <form id="login" action="">
+        <label for="username">Username <input type="text" id="username"></label>
+        <label for="password">Password <input type="password" id="password"></label>
+        <button id="submit">Login</button>
+        <div class="error-message"></div>
+    </form>
+    <!-- Add/edit buttons go here -->
+    <div id="add-edit"></div>
+    <form action="" id="edit-form"></form>
+</main>
+<footer></footer>
+
+
+<!-- <script src="./services/Login.js" type="module"></script>
+<script src="./services/Categories.js" type="module"></script>
+<script src="./services/Recipes.js" type="module"></script>
+<script src="./services/SubRecipes.js" type="module"></script>
+<script src="./services/SuperCategories.js"type="module"></script>
+<script src="views/edit.js" type="module"></script> -->
+<script>
+
+    var Airtable = require('airtable');
+    var base = new Airtable({apiKey: 'keyBxo8LQ5bExhSX2'}).base('app7gKPCl56Z87kgA');
+
+    base('supercategories').select({
+        maxRecords: 3,
+        view: "Grid view"
+    }).eachPage(function page(records, fetchNextPage) {
+        records.forEach(function(record) {
+            console.log('Retrieved', record.get('Name'));
+        });
+        fetchNextPage();
+    }, function done(err) {
+        if (err) { console.error(err); return; }
+    });
+
+    </script>
+</body>
+</html>
