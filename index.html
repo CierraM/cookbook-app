@@ -6,16 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's Kuchen?</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
     <header>
-        <a href="./index.html"><img src="assets/home.svg" alt="home icon" width="30"></a>
-        <div><img src="assets/magnifying-glass.svg" alt="search icon" width="20"><input type="text" placeholder="search"></div>
+        <a href="./index.html">
+            <img src="assets/home.svg" alt="home icon" width="30">
+        </a>
+        <div class="search-bar">
+            <img src="assets/magnifying-glass.svg" alt="search icon" width="20">
+            <input type="text">
+        </div>
+
     </header>
-    <main>
+    <main class="index">
         <h1>What's Kuchen?</h1>
-        <aside class="comment">
+        <aside class="quote">
             “No one who cooks cooks alone. Even at her most solitary a cook
             in the kitchen is surrounded by generations of cooks past...”
             - Laurie Colwin
@@ -49,14 +56,20 @@
             thank my own family for their encouragement of my efforts throughout the years. Likewise, I encourage each
             of you to be supportive of the culinary efforts of your loved ones.
         </p>
+        <p>-Amie Morris</p>
         <nav>
-            <ul id="menu"></ul>
-            <button id="nav-button">Browse Recipes</button>
+            <div id="menu" class="hidden nav">
+                <p class="arrow">&#10094;</p>
+                <ul id="recipe-list"></ul>
+                <p class="arrow">&#10095;</p>
+            </div>
+            <button id="nav-button" class="nav-button">Browse Recipes</button>
         </nav>
     </main>
     <footer><a href="edit.html" class="admin">admin</a></footer>
-    <script src="services/airtable.js"></script>
-    <script src="views/index.js"></script>
+
+    <script src="views/index.js" type="module"></script>
+
 </body>
 
 </html>

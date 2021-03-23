@@ -1,0 +1,150 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: helvetica, arial, sans-serif;
+}
+
+p{
+    font-size: 1.2em;
+    line-height: 1.4em;
+}
+
+
+
+.quote {
+    font-style: italic;
+    background-color: #eeeeee;
+    padding: 10px;
+    font-size: 1.2em;
+    line-height: 1.4em;
+}
+
+header {
+    display: flex;
+    background-color: #ccc;
+    padding: 10px;
+
+}
+
+header a{
+    display: flex;
+    align-items: center;
+}
+
+header a img{
+    width: 32px;
+    padding-right: 10px;
+
+}
+
+.search-bar{
+    width: 100%;
+    display: flex;
+    height: 40px;
+}
+
+.search-bar img{
+    width: 32px;
+    padding: 10px;
+    background-color: #fff;
+    padding-left: 0;
+}
+
+.search-bar input{
+    all: unset;
+    width: 100%;
+    background-color: #fff;
+    font-size: 1.4em;
+    display: block;
+}
+
+main{
+    margin: 0 15px;
+    padding-bottom: 75px;
+    
+}
+
+nav{
+    position: fixed;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.nav{
+ 
+ width: 275px;
+ 
+}
+
+.nav ul{
+    padding: 0;
+    list-style: none;
+    height: 350px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin: 0;
+    transition: height .5s ease-in-out;
+}
+
+.nav ul li{
+    background-color: #eee;
+    margin: 10px auto;
+    padding: 10px;
+    box-shadow: 2px 3px 12px #777;
+    width: 250px;
+}
+
+.nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav ul li:last-of-type{
+    margin-bottom: 0;
+}
+
+.nav ul li:first-of-type{
+    margin-top: 0;
+}
+
+.arrow{
+    transform: rotate(90deg);
+    width: 50px;
+    font-size: 2em;
+    margin: auto;
+    text-shadow: 2px 3px 12px #777;
+}
+
+
+.nav-button{
+    all: unset;
+    background-color: #eee;
+    width: 200px;
+    height: 75px;
+    box-shadow: 2px 3px 12px #777;
+}
+
+.hidden{
+    overflow: hidden;
+    height: 0px;
+}
+
+.hidden ul, .hidden p{
+    height: 0px;
+}
+
+footer{
+    background-color: black;
+    padding: 10px;
+}
+
+footer a{
+    
+    color: #555;
+    text-decoration: none;
+}

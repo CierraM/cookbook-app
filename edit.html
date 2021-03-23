@@ -5,12 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's Kuchen? Admin Portal</title>
-    <script src="./assets/airtable.js"></script>
+    <link rel="stylesheet" href="styles/edit.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <header>
-        <a href="./index.html"><img src="assets/home.svg" alt="home icon" width="30"></a>
-        <div><img src="assets/magnifying-glass.svg" alt="search icon" width="20"><input type="text" placeholder="search"></div>
+        <a href="./index.html">
+            <img src="assets/home.svg" alt="home icon" width="30">
+        </a>
+        <div class="search-bar">
+            <img src="assets/magnifying-glass.svg" alt="search icon" width="20">
+            <input type="text">
+        </div>
+        
     </header>
     <main>
     <h2>Admin Portal</h2>
@@ -27,30 +34,25 @@
 </main>
 <footer></footer>
 
-
-<!-- <script src="./services/Login.js" type="module"></script>
-<script src="./services/Categories.js" type="module"></script>
-<script src="./services/Recipes.js" type="module"></script>
-<script src="./services/SubRecipes.js" type="module"></script>
-<script src="./services/SuperCategories.js"type="module"></script>
-<script src="views/edit.js" type="module"></script> -->
-<script>
-
-    var Airtable = require('airtable');
-    var base = new Airtable({apiKey: 'keyBxo8LQ5bExhSX2'}).base('app7gKPCl56Z87kgA');
-
-    base('supercategories').select({
-        maxRecords: 3,
-        view: "Grid view"
-    }).eachPage(function page(records, fetchNextPage) {
-        records.forEach(function(record) {
-            console.log('Retrieved', record.get('Name'));
-        });
-        fetchNextPage();
-    }, function done(err) {
-        if (err) { console.error(err); return; }
-    });
-
-    </script>
+<script src="views/edit.js" type="module"></script>
 </body>
 </html>
+
+
+<!-- <h2>Edit Recipe</h2>
+    <label for="categorySelect">Select a category: <select id="categorySelect">
+    <option value="">--Choose a category--</option>
+    </select></label>
+    <label for="recipeName">Name:<select id="name   Select">
+        <option value="">--Choose a recipe--</option>
+        </select></label>
+    <label for="recipeComment">Comment:<textarea id="recipeComment" cols="30" rows="10"></textarea></label>
+    <div class="subrecipe-form">
+        <h4>Subrecipe</h4>
+        <label for="mainIngredients">Ingredients: Please separate with ";".<textarea id="mainIngredients" cols="30" rows="10"></textarea></label>
+        <label for="mainInstructions">Instructions:<textarea id="mainInstructions" cols="30" rows="10"></textarea></label>
+    </div>
+    <button id="addNewSubrecipe">Add Another Subrecipe</button>
+    <button id="addRecipeSubmit">Add Recipe</button> -->
+
+    

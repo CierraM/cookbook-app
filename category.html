@@ -5,23 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <header>
-        <a href="./index.html"><img src="assets/home.svg" alt="home icon" width="30"></a>
-        <div><img src="assets/magnifying-glass.svg" alt="search icon" width="20"><input type="text" placeholder="search"></div>
+        <a href="./index.html">
+            <img src="assets/home.svg" alt="home icon" width="30">
+        </a>
+        <div class="search-bar">
+            <img src="assets/magnifying-glass.svg" alt="search icon" width="20">
+            <input type="text">
+        </div>
+        
     </header>
     <main>
         <h2 id="category"></h2>
-        <aside id="quote"></aside>
-        
+        <aside id="quote" class="quote"></aside>
+        <div id="recipeList"></div>
         <nav>
-            <ul id="menu"></ul>
-            <button id="nav-button">Browse Recipes</button>
+            <div id="menu" class="hidden nav">
+                <p class="arrow">&#10094;</p>
+                <ul id="recipe-list"></ul>
+                <p class="arrow">&#10095;</p>
+            </div>
+            <button id="nav-button" class="nav-button">Browse Recipes</button>
         </nav>
     </main>
     <footer></footer>
-    <script src="services/airtable.js"></script>
-    <script src="views/category.js"></script>
+
+    <script src="views/category.js" type="module"></script>
 </body>
 </html>
