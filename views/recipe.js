@@ -1,5 +1,5 @@
 import Recipes from '../services/Recipes.js';
-import Search from '../services/Search.js'
+import Search from '../services/search.js'
 
 const recipes = new Recipes();
 await recipes.getData();
