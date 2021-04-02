@@ -34,8 +34,8 @@ menuItems.forEach(menuItem => {
 document.getElementById('nav-button').onclick = toggleNav;
 
 function toggleNav(e) {
-    alert('clicked')
-
+    e.preventDefault()
+    
     let menu = document.getElementById('menu')
     let menuBtn = document.getElementById('nav-button')
     menu.classList.toggle('hidden');
