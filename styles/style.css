@@ -1,7 +1,30 @@
+
+
+html{
+    min-height: 100vh;
+}
+
 body{
     margin: 0;
     padding: 0;
     font-family: helvetica, arial, sans-serif;
+    min-height: 100vh;
+    
+}
+
+h1, h2, h3, h4, h5, h6{
+    text-transform: capitalize;
+}
+
+
+h1, h2{
+    font-size: 2.4em;
+    margin-bottom: 15px;
+}
+
+h4{
+    font-size: 1.6em;
+    margin: 10px 0;
 }
 
 p{
@@ -9,11 +32,18 @@ p{
     line-height: 1.4em;
 }
 
+main{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 10px;
+    padding-bottom: 125px;
+    min-height: 100vh;
+}
+
 
 
 .quote {
     font-style: italic;
-    background-color: #eeeeee;
     padding: 10px;
     font-size: 1.2em;
     line-height: 1.4em;
@@ -21,8 +51,10 @@ p{
 
 header {
     display: flex;
-    background-color: #ccc;
+    background: rgb(87,39,7);
+background: linear-gradient(180deg, rgba(87,39,7,1) 0%, rgba(75,30,0,1) 100%);
     padding: 10px;
+    justify-content: left;
 
 }
 
@@ -39,7 +71,9 @@ header a img{
 
 .search-bar{
     width: 100%;
+    max-width: 500px;
     display: flex;
+    
     height: 40px;
 }
 
@@ -58,12 +92,6 @@ header a img{
     display: block;
 }
 
-main{
-    margin: 0 15px;
-    padding-bottom: 75px;
-    
-}
-
 nav{
     position: fixed;
     text-align: center;
@@ -76,23 +104,42 @@ nav{
 }
 
 .nav{
- 
  width: 275px;
  
 }
 
+
+
 .nav ul{
     padding: 0;
     list-style: none;
-    height: 350px;
+    
     overflow-y: scroll;
     overflow-x: hidden;
     margin: 0;
-    transition: height .5s ease-in-out;
+    
+}
+
+.expanded ul{
+    height: 350px;
+    transition: height .5s ease-in-out .1s;
+    
+}
+
+
+.hidden ul {
+    height: 0px;
+    transition: height .5s ease-in-out .1s;
+}
+
+.hidden p{
+    display: none;
 }
 
 .nav ul li{
-    background-color: #eee;
+    background: rgb(87,39,7);
+background: linear-gradient(180deg, rgba(87,39,7,1) 0%, rgba(75,30,0,1) 100%);
+filter: brightness(1.9);
     margin: 10px auto;
     padding: 10px;
     box-shadow: 2px 3px 12px #777;
@@ -101,7 +148,7 @@ nav{
 
 .nav ul li a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .nav ul li:last-of-type{
@@ -123,28 +170,92 @@ nav{
 
 .nav-button{
     all: unset;
-    background-color: #eee;
+    background: rgb(133,0,0);
+background: linear-gradient(9deg, rgba(133,0,0,1) 0%, rgba(158,0,0,1) 100%);
+    color: #fff;
+    font-size: 22px;
     width: 200px;
     height: 75px;
     box-shadow: 2px 3px 12px #777;
 }
 
-.hidden{
-    overflow: hidden;
-    height: 0px;
+.nav-button:active{
+    filter: brightness(90%);
+    box-shadow: none;
+    transition: .1s ease-out;
+}
+
+
+
+.recipeList ul{
+    padding: 0;
 }
 
 .hidden ul, .hidden p{
     height: 0px;
 }
 
+.recipeList ul li{
+    list-style: none;
+    padding: 8px 0;
+}
+
+.recipeList ul li a{
+
+    color: black;
+    font-size: 1.4em;
+}
+
+.sbs{
+    display: flex;
+}
+
+.sbs h2{
+    margin: 0;
+    margin-left: 15px;
+    margin-top: 6px;
+    align-self: center;
+}
+
+.sbs a{
+    text-decoration: none;
+    font-size: 3em;
+    color: black;
+}
+
+.sbs a:active{
+    filter: brightness(85%);
+}
+
+.ingredients-list{
+    padding: 0 20px;
+    font-size: 1.4em;
+}
+
+.ingredients-list li{
+    margin: 10px 0;
+}
+
+.ingredients-list li:nth-child(odd) {
+    background:#eee;
+}
+
+.favorite{
+    font-size: 100px;
+    text-shadow: 1px 1px 3px black;
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    color: red;
+}
+
+
 footer{
     background-color: black;
     padding: 10px;
 }
 
-footer a{
-    
+footer a{   
     color: #555;
     text-decoration: none;
 }

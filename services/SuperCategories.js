@@ -20,4 +20,18 @@ export default class SuperCategories {
     getAll(){
         return this.data
     }
+
+    getAllRecipes(){
+        //Gets a list of every recipe in the database
+        let recipes = []
+        for (const cat in this.data){
+            for (const subCat in this.data[cat].subcategories){
+                for (let recipe in this.data[cat].subcategories[subCat].recipes){
+                    recipes.push(recipe)
+                }
+            }
+        }
+        return recipes
+    }
+    
 }

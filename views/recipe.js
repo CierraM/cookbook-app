@@ -1,5 +1,5 @@
 import Recipes from '../services/Recipes.js';
-
+import Search from '../services/Search.js'
 
 const recipes = new Recipes();
 await recipes.getData();
@@ -35,7 +35,7 @@ else{
 for (let subRecipe in subRecipeList) {
     let name = subRecipe
     if (name == 'main') {
-        name = ''
+        name = 'Ingredients: '
     }
     let wrapper = document.createElement('div')
     wrapper.classList.add('subrecipe')
@@ -55,8 +55,13 @@ for (let subRecipe in subRecipeList) {
     })
     wrapper.appendChild(ul);
 
+    let heading = document.createElement('h3')
+    heading.classList.add('instructions-heading')
+    heading.innerHTML = 'Instructions:'
     let instructions = document.createElement('p')
+    instructions.classList.add('instructions')
     instructions.innerHTML = subRecipeList[subRecipe].instructions
+    wrapper.appendChild(heading)
     wrapper.appendChild(instructions)
 
 
@@ -64,3 +69,40 @@ for (let subRecipe in subRecipeList) {
 }
 }
 
+////////////////////////////////////////////////////////////
+//Favorites
+
+//check if something is favorited
+let myFavorites = localStorage.getItem('favorites')
+JSON.parse(myFavorites).forEach(favorite => {
+    if (favorite == recipeName) {
+        document.getElementById('favorite').innerHTML = '♥'
+    }
+})
+
+//set and unset favorites
+let favoritesIcon = document.getElementById('favorite')
+favoritesIcon.addEventListener('click', ()=>{
+    let favorites
+    if (!localStorage.getItem('favorites')){
+       favorites = []
+    } else {
+        favorites = JSON.parse(localStorage.getItem('favorites'))
+    }
+    if (favoritesIcon.innerHTML == '♡'){
+        favoritesIcon.innerHTML = '♥'
+        favorites.push(recipeName)
+        
+    }
+    else if (favoritesIcon.innerHTML == '♥'){
+        favoritesIcon.innerHTML = '♡'
+        let index = favorites.indexOf(recipeName)
+        if (index > -1) {
+            favorites.splice(index, 1);
+        }
+        
+    }
+    localStorage.setItem('favorites', JSON.stringify(favorites))
+})
+
+const search = new Search()

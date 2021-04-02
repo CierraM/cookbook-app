@@ -1,4 +1,5 @@
 import SuperCategories from '../services/SuperCategories.js';
+import Search from '../services/Search.js'
 //TODO: add search bar functionality
 
 //Create nav:
@@ -7,7 +8,15 @@ await superCategories.getData()
 const menuItems = superCategories.getItems();
 
 const navList = document.querySelector('#recipe-list');
-//TODO: add a link at the top to access favorites
+let encoded = encodeURIComponent('favorites')
+let li = document.createElement('li');
+let link = document.createElement('a')
+link.setAttribute('href', `./category.html?category=${encoded}`)
+li.classList.add('menu-item');
+link.textContent = 'Favorites'
+li.appendChild(link)
+navList.appendChild(li);
+
 menuItems.forEach(menuItem => {
     let encoded = encodeURIComponent(menuItem)
     let li = document.createElement('li');
@@ -24,6 +33,7 @@ document.getElementById('nav-button').addEventListener('click', (e) => {
     let menu = document.getElementById('menu')
     let menuBtn = document.getElementById('nav-button')
     menu.classList.toggle('hidden');
+    menu.classList.toggle('expanded')
     if (menu.classList.contains('hidden')) {
         menuBtn.textContent = "Browse Recipes"
     }
@@ -35,3 +45,4 @@ document.getElementById('nav-button').addEventListener('click', (e) => {
 })
 
 
+const search = new Search()
