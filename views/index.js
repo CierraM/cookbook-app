@@ -30,6 +30,7 @@ menuItems.forEach(menuItem => {
 })
 
 document.getElementById('nav-button').addEventListener('click', (e) => {
+    alert('you clicked the button')
     let menu = document.getElementById('menu')
     let menuBtn = document.getElementById('nav-button')
     menu.classList.toggle('hidden');
@@ -44,20 +45,6 @@ document.getElementById('nav-button').addEventListener('click', (e) => {
     
 })
 
-document.getElementById('nav-button').addEventListener('touchup', (e) => {
-    let menu = document.getElementById('menu')
-    let menuBtn = document.getElementById('nav-button')
-    menu.classList.toggle('hidden');
-    menu.classList.toggle('expanded')
-    if (menu.classList.contains('hidden')) {
-        menuBtn.textContent = "Browse Recipes"
-    }
-    else {
-        menuBtn.textContent = "X Close"
-    }
-    
-    
-})
 
 
 const search = new Search()
