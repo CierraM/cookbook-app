@@ -54,7 +54,12 @@ main{
     line-height: 1.4em;
 }
 
+.header{
+    display: flex;
+}
+
 header {
+    width: 100%;
     max-width: 700px;
     margin: auto;
     display: flex;
@@ -62,6 +67,14 @@ header {
     padding: 10px;
     justify-content: left;
 
+}
+
+.padding{
+    display: inline-block;
+    height: 40px;
+    padding: 10px 0;
+    width: calc(calc(100vw - 700px) / 2);
+    background: burlywood url(../assets/1002.png) repeat;
 }
 
 header a{
