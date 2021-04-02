@@ -55,6 +55,8 @@ main{
 }
 
 header {
+    max-width: 700px;
+    margin: auto;
     display: flex;
     background: burlywood url(../assets/1002.png) repeat;
     padding: 10px;
