@@ -17,14 +17,17 @@ h1, h2, h3, h4, h5, h6{
 }
 
 
+
 h1, h2{
     font-size: 2.4em;
     margin-bottom: 15px;
+    margin-top: 0;
+    padding-top: 15px;
 }
 
 h4{
     font-size: 1.6em;
-    margin: 10px 0;
+    padding: 10px 0;
 }
 
 p{
@@ -38,6 +41,7 @@ main{
     padding: 0 10px;
     padding-bottom: 125px;
     min-height: 100vh;
+    background: burlywood url(../assets/restaurant_icons.png) repeat;
 }
 
 
@@ -51,8 +55,7 @@ main{
 
 header {
     display: flex;
-    background: rgb(87,39,7);
-background: linear-gradient(180deg, rgba(87,39,7,1) 0%, rgba(75,30,0,1) 100%);
+    background: burlywood url(../assets/1002.png) repeat;
     padding: 10px;
     justify-content: left;
 
@@ -137,9 +140,7 @@ nav{
 }
 
 .nav ul li{
-    background: rgb(87,39,7);
-background: linear-gradient(180deg, rgba(87,39,7,1) 0%, rgba(75,30,0,1) 100%);
-filter: brightness(1.9);
+    background: burlywood url(../assets/beige-tiles.png) repeat;
     margin: 10px auto;
     padding: 10px;
     box-shadow: 2px 3px 12px #777;
@@ -148,7 +149,7 @@ filter: brightness(1.9);
 
 .nav ul li a{
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .nav ul li:last-of-type{
@@ -170,8 +171,7 @@ filter: brightness(1.9);
 
 .nav-button{
     all: unset;
-    background: rgb(133,0,0);
-background: linear-gradient(9deg, rgba(133,0,0,1) 0%, rgba(158,0,0,1) 100%);
+    background: rgb(150, 3, 23) url(../assets/square_bg.png) repeat;
     color: #fff;
     font-size: 22px;
     width: 200px;
