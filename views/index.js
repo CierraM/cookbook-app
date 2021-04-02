@@ -45,6 +45,7 @@ document.getElementById('nav-button').addEventListener('click', (e) => {
 })
 
 document.getElementById('nav-button').addEventListener('touchend', (e) => {
+    alert('you clicked the button')
     let menu = document.getElementById('menu')
     let menuBtn = document.getElementById('nav-button')
     menu.classList.toggle('hidden');
