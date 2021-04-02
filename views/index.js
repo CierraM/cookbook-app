@@ -1,5 +1,5 @@
-import SuperCategories from './services/SuperCategories.js';
-import Search from './services/search.js'
+import SuperCategories from '../services/SuperCategories.js';
+import Search from '../services/search.js'
 //TODO: add search bar functionality
 
 //Create nav:
