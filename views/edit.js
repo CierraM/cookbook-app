@@ -1,7 +1,7 @@
 import Login from '../services/Login.js';
 import Categories from '../services/Categories.js';
 import Recipes from '../services/Recipes.js';
-import Search from '../services/Search.js'
+import Search from '../services/search.js'
 
 const login = new Login();
 const categories = new Categories();

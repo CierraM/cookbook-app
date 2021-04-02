@@ -1,5 +1,5 @@
 import SuperCategories from '../services/SuperCategories.js'
-import Search from '../services/Search.js'
+import Search from '../services/search.js'
 
 const superCategories = new SuperCategories();
 await superCategories.getData()
