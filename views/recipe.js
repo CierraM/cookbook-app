@@ -74,35 +74,38 @@ for (let subRecipe in subRecipeList) {
 
 //check if something is favorited
 let myFavorites = localStorage.getItem('favorites')
-JSON.parse(myFavorites).forEach(favorite => {
-    if (favorite == recipeName) {
-        document.getElementById('favorite').innerHTML = '♥'
-    }
-})
-
-//set and unset favorites
-let favoritesIcon = document.getElementById('favorite')
-favoritesIcon.addEventListener('click', ()=>{
-    let favorites
-    if (!localStorage.getItem('favorites')){
-       favorites = []
-    } else {
-        favorites = JSON.parse(localStorage.getItem('favorites'))
-    }
-    if (favoritesIcon.innerHTML == '♡'){
-        favoritesIcon.innerHTML = '♥'
-        favorites.push(recipeName)
-        
-    }
-    else if (favoritesIcon.innerHTML == '♥'){
-        favoritesIcon.innerHTML = '♡'
-        let index = favorites.indexOf(recipeName)
-        if (index > -1) {
-            favorites.splice(index, 1);
+if (myFavorites){
+    JSON.parse(myFavorites).forEach(favorite => {
+        if (favorite == recipeName) {
+            document.getElementById('favorite').innerHTML = '♥'
         }
-        
-    }
-    localStorage.setItem('favorites', JSON.stringify(favorites))
-})
+    })
+    
+    //set and unset favorites
+    let favoritesIcon = document.getElementById('favorite')
+    favoritesIcon.addEventListener('click', ()=>{
+        let favorites
+        if (!localStorage.getItem('favorites')){
+           favorites = []
+        } else {
+            favorites = JSON.parse(localStorage.getItem('favorites'))
+        }
+        if (favoritesIcon.innerHTML == '♡'){
+            favoritesIcon.innerHTML = '♥'
+            favorites.push(recipeName)
+            
+        }
+        else if (favoritesIcon.innerHTML == '♥'){
+            favoritesIcon.innerHTML = '♡'
+            let index = favorites.indexOf(recipeName)
+            if (index > -1) {
+                favorites.splice(index, 1);
+            }
+            
+        }
+        localStorage.setItem('favorites', JSON.stringify(favorites))
+    })
+}
+
 
 const search = new Search()
