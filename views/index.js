@@ -29,21 +29,6 @@ menuItems.forEach(menuItem => {
     navList.appendChild(li);
 })
 
-document.getElementById('nav-button').addEventListener('click', (e) => {
-    let menu = document.getElementById('menu')
-    let menuBtn = document.getElementById('nav-button')
-    menu.classList.toggle('hidden');
-    menu.classList.toggle('expanded')
-    if (menu.classList.contains('hidden')) {
-        menuBtn.textContent = "Browse Recipes"
-    }
-    else {
-        menuBtn.textContent = "X Close"
-    }
-    
-    
-})
-
 document.getElementById('nav-button').addEventListener('touchend', (e) => {
     alert('you clicked the button')
     let menu = document.getElementById('menu')
@@ -59,6 +44,7 @@ document.getElementById('nav-button').addEventListener('touchend', (e) => {
     
     
 })
+
 
 
 const search = new Search()
