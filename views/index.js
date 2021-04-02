@@ -29,12 +29,11 @@ menuItems.forEach(menuItem => {
     navList.appendChild(li);
 })
 
-document.getElementById('nav-button').addEventListener('click', toggleNav)
-document.getElementById('nav-button').addEventListener('touchend', toggleNav)
+// document.getElementById('nav-button').addEventListener('click', toggleNav)
+// document.getElementById('nav-button').addEventListener('touchend', toggleNav)
 
-function toggleNav(e) {
-    alert('you clicked the button')
-    e.preventDefault()
+function toggleNav() {
+
     let menu = document.getElementById('menu')
     let menuBtn = document.getElementById('nav-button')
     menu.classList.toggle('hidden');
