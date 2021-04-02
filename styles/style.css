@@ -9,6 +9,7 @@ body{
     padding: 0;
     font-family: helvetica, arial, sans-serif;
     min-height: 100vh;
+    background: burlywood url(../assets/restaurant_icons.png) repeat;
     
 }
 
@@ -41,7 +42,7 @@ main{
     padding: 0 10px;
     padding-bottom: 125px;
     min-height: 100vh;
-    background: burlywood url(../assets/restaurant_icons.png) repeat;
+    
 }
 
 
