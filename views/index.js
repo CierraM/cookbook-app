@@ -33,7 +33,7 @@ menuItems.forEach(menuItem => {
 document.querySelector('nav button').addEventListener('touchend', toggleNav, true)
 
 function toggleNav(e) {
-
+    try {
     e.preventDefault()
     
     let menu = document.getElementById('menu')
@@ -46,6 +46,10 @@ function toggleNav(e) {
     else {
         menuBtn.textContent = "X Close"
     }
+}
+catch{
+    alert(error.message)
+}
 }
 
 
