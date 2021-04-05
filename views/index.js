@@ -30,6 +30,7 @@ menuItems.forEach(menuItem => {
 })
 
 document.body.addEventListener('click', e => {
+    alert(`you clicked ${e.target}`)
     if (e.target.id == 'nav-button'){
         toggleNav(e)
     }
