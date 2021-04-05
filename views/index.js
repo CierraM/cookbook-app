@@ -31,10 +31,11 @@ menuItems.forEach(menuItem => {
 
 
 document.querySelector('nav button').addEventListener('click', toggleNav)
-document.querySelector('nav button').addEventListener('touchstart', () => {});
-document.querySelector('nav button').addEventListener('touchend', () => {});
-document.querySelector('nav button').addEventListener('touchcancel', () => {});
-document.querySelector('nav button').addEventListener('touchmove', () => {});
+document.querySelector('nav').addEventListener('touchstart', () => {});
+document.querySelector('nav').addEventListener('touchend', () => {});
+document.querySelector('nav').addEventListener('touchcancel', () => {});
+document.querySelector('nav').addEventListener('touchmove', () => {});
+document.querySelector('nav').addEventListener('tap', () => {});
 
 function toggleNav(e) {
     try {
