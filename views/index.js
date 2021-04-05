@@ -31,6 +31,8 @@ menuItems.forEach(menuItem => {
 
 // document.getElementById('nav-button').addEventListener('click', toggleNav)
 // document.getElementById('nav-button').addEventListener('touchend', toggleNav)
+
+try {
 document.getElementById('nav-button').onclick = toggleNav;
 
 function toggleNav(e) {
@@ -47,7 +49,10 @@ function toggleNav(e) {
         menuBtn.textContent = "X Close"
     }
 }
-
+}
+catch(err) {
+    alert(err.message)
+}
 
 
 const search = new Search()
