@@ -29,11 +29,8 @@ menuItems.forEach(menuItem => {
     navList.appendChild(li);
 })
 
-// document.getElementById('nav-button').addEventListener('click', toggleNav)
-// document.getElementById('nav-button').addEventListener('touchend', toggleNav)
-
-try {
-document.getElementById('nav-button').onclick = toggleNav;
+document.getElementById('nav-button').addEventListener('click', toggleNav, true)
+document.getElementById('nav-button').addEventListener('touchend', toggleNav, true)
 
 function toggleNav(e) {
     e.preventDefault()
@@ -49,10 +46,7 @@ function toggleNav(e) {
         menuBtn.textContent = "X Close"
     }
 }
-}
-catch(err) {
-    alert(err.message)
-}
+
 
 
 const search = new Search()
