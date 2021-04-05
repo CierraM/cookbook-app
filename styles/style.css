@@ -198,11 +198,16 @@ nav{
     cursor: pointer;
 }
 
-.nav-button:active{
+
+#nav-button{
+    cursor: pointer;
+}
+
+/* .nav-button:active{
     filter: brightness(90%);
     box-shadow: none;
     transition: .1s ease-out;
-}
+} */
 
 
 
