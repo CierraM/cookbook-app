@@ -48,7 +48,7 @@ function toggleNav(e) {
     else {
         menuBtn.textContent = "X Close"
     }
-    document.body.innerHTML += '<p>You clicked the button successfully</p>'
+    
 }
 catch{
     alert(error.message)
