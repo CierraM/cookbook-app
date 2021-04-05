@@ -1,7 +1,7 @@
 import SuperCategories from '../services/SuperCategories.js';
 import Search from '../services/search.js'
-//TODO: add search bar functionality
 
+document.body.textContent = 'Javascript file is working'
 
 //Create nav:
 const superCategories = new SuperCategories();
@@ -30,19 +30,12 @@ menuItems.forEach(menuItem => {
     navList.appendChild(li);
 })
 
-document.body.addEventListener('click', e => {
-    if (e.target.id == 'nav-button'){
-        toggleNav(e)
-        document.getElementById('nav-button').textContent = 'clicked'
-    }
-})
-
-// document.querySelector('nav button').addEventListener('click', toggleNav)
-// document.querySelector('nav').addEventListener('touchstart', () => {});
-// document.querySelector('nav').addEventListener('touchend', () => {});
-// document.querySelector('nav').addEventListener('touchcancel', () => {});
-// document.querySelector('nav').addEventListener('touchmove', () => {});
-// document.querySelector('nav').addEventListener('tap', () => {});
+document.querySelector('nav button').addEventListener('click', toggleNav)
+document.querySelector('nav').addEventListener('touchstart', () => {});
+document.querySelector('nav').addEventListener('touchend', () => {});
+document.querySelector('nav').addEventListener('touchcancel', () => {});
+document.querySelector('nav').addEventListener('touchmove', () => {});
+document.querySelector('nav').addEventListener('tap', () => {});
 
 function toggleNav(e) {
     try {
