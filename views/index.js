@@ -30,7 +30,7 @@ menuItems.forEach(menuItem => {
 })
 
 // document.getElementById('nav-button').addEventListener('click', toggleNav, true)
-document.querySelector('nav').addEventListener('touchend', toggleNav, true)
+document.querySelector('nav button').addEventListener('touchend', toggleNav, true)
 
 function toggleNav(e) {
 
