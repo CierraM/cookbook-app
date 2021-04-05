@@ -29,8 +29,12 @@ menuItems.forEach(menuItem => {
     navList.appendChild(li);
 })
 
-// document.getElementById('nav-button').addEventListener('click', toggleNav, true)
-document.querySelector('nav button').addEventListener('touchend', toggleNav, true)
+
+document.querySelector('nav button').addEventListener('click', toggleNav)
+document.querySelector('nav button').addEventListener('touchstart', () => {});
+document.querySelector('nav button').addEventListener('touchend', () => {});
+document.querySelector('nav button').addEventListener('touchcancel', () => {});
+document.querySelector('nav button').addEventListener('touchmove', () => {});
 
 function toggleNav(e) {
     try {
