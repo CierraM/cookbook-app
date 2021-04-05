@@ -1,7 +1,7 @@
 import SuperCategories from '../services/SuperCategories.js';
 import Search from '../services/search.js'
 
-document.body.textContent = 'Javascript file is working'
+console.log('javascript loaded')
 
 //Create nav:
 const superCategories = new SuperCategories();
