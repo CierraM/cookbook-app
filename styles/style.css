@@ -195,6 +195,7 @@ nav{
     height: 75px;
     box-shadow: 2px 3px 12px #777;
     font-family: "Sofia", cursive;
+    cursor: pointer;
 }
 
 .nav-button:active{

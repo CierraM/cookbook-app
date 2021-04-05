@@ -34,6 +34,8 @@ document.querySelector('nav button').addEventListener('touchend', toggleNav, tru
 
 function toggleNav(e) {
     try {
+    console.log('clicked')
+    
     e.preventDefault()
     
     let menu = document.getElementById('menu')
@@ -46,6 +48,7 @@ function toggleNav(e) {
     else {
         menuBtn.textContent = "X Close"
     }
+    document.body.innerHTML += '<p>You clicked the button successfully</p>'
 }
 catch{
     alert(error.message)
