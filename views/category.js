@@ -1,6 +1,7 @@
 import SuperCategories from '../services/SuperCategories.js'
 import Search from '../services/search.js'
 
+async function main() {
 const superCategories = new SuperCategories();
 await superCategories.getData()
 
@@ -66,8 +67,8 @@ if (thisCategory == 'favorites') {
             recipeList.appendChild(ul)
 
         })
-    
-} else {
+    }
+else {
     document.getElementById('category').innerHTML = thisCategory
 
     //Find out what supercategory we are on, and get the list of subcategories that goes with it
@@ -163,4 +164,4 @@ document.getElementById('nav-button').addEventListener('click', () => {
     } else {
         menuBtn.textContent = "X Close"
     }
-})
+})}

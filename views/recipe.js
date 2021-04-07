@@ -1,6 +1,7 @@
 import Recipes from '../services/Recipes.js';
 import Search from '../services/search.js'
 
+async function main() {
 const recipes = new Recipes();
 await recipes.getData();
 ////////////////////////////////////////////////////////////////////////
@@ -109,3 +110,5 @@ favoritesIcon.addEventListener('click', ()=>{
 })
 
 const search = new Search()
+}
+main()

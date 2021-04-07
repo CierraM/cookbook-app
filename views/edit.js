@@ -3,6 +3,7 @@ import Categories from '../services/Categories.js';
 import Recipes from '../services/Recipes.js';
 import Search from '../services/search.js'
 
+async function main() {
 const login = new Login();
 const categories = new Categories();
 const recipes = new Recipes();
@@ -127,7 +128,8 @@ function createAddForm() {
             recipes.upLoadRecipe(recipeData)
         })
 }
-
+}
+main()
 //////////////////////////////////////////////////
 //TODO: finish edit form
 //TODO: add recipes
