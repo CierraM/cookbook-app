@@ -43,10 +43,26 @@ async function main() {
 
         let allRecipes = superCategories.getAllRecipes()
         let results = []
+        //add stuff with that in the name
         allRecipes.forEach(recipe => {
 
             if (recipe.toLowerCase().includes(searchQuery.toLowerCase())) {
                 results.push(recipe)
+            }
+        })
+        //add stuff with that in the ingredients
+        allRecipes.forEach(recipe => {
+            let subrecipes = superCategories.getSubRecipes(recipe)
+
+            for (let subrecipe in subrecipes) {
+                
+                if (subrecipes[subrecipe].ingredients){
+                    if (subrecipes[subrecipe].ingredients.toLowerCase().includes(searchQuery.toLowerCase())){
+                        if (!results.includes(recipe)){{
+                            results.push(recipe)
+                        }}
+                }
+                }
             }
         })
 
