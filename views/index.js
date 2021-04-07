@@ -3,6 +3,7 @@ import Search from '../services/search.js'
 
 console.log('javascript loaded')
 
+async function main() {
 //Create nav:
 const superCategories = new SuperCategories();
 await superCategories.getData()
@@ -62,3 +63,5 @@ catch{
 
 
 const search = new Search()
+}
+main()
