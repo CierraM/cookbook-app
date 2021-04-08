@@ -33,8 +33,24 @@ if (subRecipeList === null) {
 }
 else{
 //add ingredients
+let arr = []
 for (let subRecipe in subRecipeList) {
-    let name = subRecipe
+    arr.push(subRecipe)
+}
+    //Create an array that has the subrecipes sorted by index
+    let sortedNames = arr.sort((val1, val2) => subRecipeList[val1].index - subRecipeList[val2].index)
+    
+
+    let sortedRecipes = []
+    sortedNames.forEach(name => {
+        let newSubRecipe = {}
+        newSubRecipe[name] = subRecipeList[name]
+        sortedRecipes.push(newSubRecipe)
+    })
+
+    sortedRecipes.forEach(subRecipe => {
+    let name = Object.keys(subRecipe)[0]
+    
     if (name == 'main') {
         name = 'Ingredients: '
     }
@@ -48,7 +64,8 @@ for (let subRecipe in subRecipeList) {
 
     let ul = document.createElement('ul')
     ul.classList.add('ingredients-list')
-    let ingredients = recipes.parseIngredients(subRecipeList[subRecipe].ingredients)
+    
+    let ingredients = recipes.parseIngredients(subRecipeList[Object.keys(subRecipe)[0]].ingredients)
     ingredients.forEach(ingredient => {
         let li = document.createElement('li');
         li.textContent = ingredient
@@ -61,13 +78,15 @@ for (let subRecipe in subRecipeList) {
     heading.innerHTML = 'Instructions:'
     let instructions = document.createElement('p')
     instructions.classList.add('instructions')
-    instructions.innerHTML = subRecipeList[subRecipe].instructions
+    instructions.innerHTML = subRecipeList[Object.keys(subRecipe)[0]].instructions
     wrapper.appendChild(heading)
     wrapper.appendChild(instructions)
 
 
     document.getElementById('instructions').appendChild(wrapper)
-}
+
+    
+})
 }
 
 ////////////////////////////////////////////////////////////

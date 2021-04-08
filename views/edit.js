@@ -109,10 +109,11 @@ function createAddForm() {
                 recipeData.subRecipes[name] = {};
 
                 let ingredients = document.querySelector(`#ingredients${i}`).value.split(';').map(item => item.trim()).join(';')
-                
+                let index = i
 
                 let instructions = document.querySelector(`#instructions${i}`).value
                 
+                recipeData.subRecipes[name].index = index
                 recipeData.subRecipes[name].ingredients = ingredients
                 recipeData.subRecipes[name].instructions = instructions
                 
